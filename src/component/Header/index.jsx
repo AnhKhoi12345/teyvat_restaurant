@@ -1,9 +1,10 @@
+import Navbar from '../Navbar';
 import './header.scss';
 
 function Header() {
   return (
     <div>
-      <h1>Header</h1>
+      <Navbar />
     </div>
   );
 }

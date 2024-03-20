@@ -2,8 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat';
 }
 body {
   margin: 0;
   padding: 0;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url('./fonts/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
 }

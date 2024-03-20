@@ -1,0 +1,55 @@
+.navbar-container {
+  position: absolute;
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  height: 120px;
+  flex-direction: row;
+
+  background-color: rgba(0, 0, 0, 0);
+
+  justify-content: center;
+  align-items: center;
+  //   z-index: 1;
+
+  .navLogo {
+    // border: 1px solid yellow;
+    // background-color: red;
+    background: url(../../images/Genshin_Impact_logo.svg.png) top no-repeat;
+    background-size: contain;
+    width: 135px;
+    height: 50px;
+    text-decoration: none;
+  }
+  .navList {
+    display: flex;
+    width: 800px;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    // border: 1px solid green;
+    margin: 0 30px 0 50px;
+    .navList-item {
+      .navList-item-text {
+        color: black;
+        text-decoration: none;
+      }
+      .navList-item-text:hover {
+        color: red;
+      }
+    }
+  }
+  .navLogoList {
+    display: flex;
+    width: 80px;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    // border: 1px solid green;
+    margin-right: 50px;
+  }
+}
