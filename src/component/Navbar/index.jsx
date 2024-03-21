@@ -45,7 +45,7 @@ function Navbar() {
           );
         })}
       </ul>
-      <Button icon="fa-solid fa-bars" rounded text aria-label="Filter"></Button>
+      <Button icon="fa-solid fa-bars" rounded text aria-label="Filter" size="large"></Button>
     </nav>
   );
 }

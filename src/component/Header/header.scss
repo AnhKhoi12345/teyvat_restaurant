@@ -1,0 +1,89 @@
+.header {
+  height: 100vh;
+  width: 100%;
+  //   border: 5px solid green;
+  .header-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0, 0);
+    background: url(../../images/restaurant2.jpg) top no-repeat;
+    background-size: 100% 100%;
+    // background-color: rgb(0, 0, 0, 0.5);
+    .header-flex {
+      height: 100%;
+      border: 5px solid blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(0, 0, 0, 0.5);
+      //   margin-top: 200px;
+      //   row-gap: 50px;
+      .header-welcome {
+        font-family: 'Courgette';
+        font-size: 60px;
+        color: white;
+        user-select: none;
+      }
+      .header-title {
+        font-family: 'Poppins';
+        font-size: 90px;
+        color: white;
+        user-select: none;
+      }
+      .look-menu-btn {
+        height: 40px;
+        font-size: 12px;
+        width: 140px;
+        border-radius: 10px;
+        margin-top: 10px;
+        background-color: white;
+        // color: red;
+      }
+      .look-menu-btn:hover {
+        background-color: red;
+        color: white;
+      }
+    }
+    .header-slider-btn {
+      top: 45%;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: rgb(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding-top: 15px;
+      font-size: 25px;
+      user-select: none;
+      display: none;
+    }
+    .header-slider-right {
+      right: 5%;
+    }
+    .header-slider-left {
+      left: 5%;
+    }
+    .header-slider-dot-btn-container {
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      column-gap: 10px;
+      right: 47.5%;
+      list-style: none;
+      .header-slider-dot {
+        width: 15px;
+        height: 15px;
+        // border: 2px solid ;
+        border-radius: 50%;
+        background-color: lightgrey;
+      }
+      .header-slider-dot:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

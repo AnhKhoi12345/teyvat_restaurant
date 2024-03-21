@@ -13,3 +13,13 @@ body {
   src: local('Montserrat'), url('./fonts/Montserrat-Light.otf') format('opentype');
   font-weight: normal;
 }
+@font-face {
+  font-family: 'Courgette';
+  src: local('Courgette'), url('./fonts/Courgette-Regular.ttf') format('opentype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url('./fonts/Poppins-ExtraBold.otf') format('opentype');
+  font-weight: normal;
+}
