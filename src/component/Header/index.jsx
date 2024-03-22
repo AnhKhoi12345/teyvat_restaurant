@@ -12,7 +12,7 @@ function Header() {
   let counter = 1;
   useEffect(() => {
     displayHeaderImg(1);
-    autoHeader();
+    // autoHeader();
   });
   const autoHeader = () => {
     const timer = setInterval(() => {
