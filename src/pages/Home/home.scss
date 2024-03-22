@@ -1,0 +1,62 @@
+.home-container {
+  .body-welcome-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
+    justify-content: center;
+    column-gap: 120px;
+    .body-welcome-text {
+      height: 300px;
+      text-align: center;
+      // border: 1px solid red;
+      margin-top: 70px;
+      width: 35%;
+      .body-restaurant-name {
+        font-family: 'Courgette';
+        font-size: 30px;
+        color: #d61c22;
+      }
+      .body-welcome {
+        font-family: 'Poppins';
+        font-size: 50px;
+        color: #222222;
+      }
+      .body-weldome-p {
+        font-size: 15px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      .our-story {
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+        // cursor: pointer;
+        // text-decoration: solid;
+        // margin-top: 30px;
+        // color: red;
+        .fa-arrow-right {
+          margin-left: 10px;
+        }
+      }
+    }
+    .body-welcome-image-container {
+      overflow: hidden;
+      width: 500px;
+      height: auto;
+      border-radius: 3%;
+      margin-top: 63px;
+      // border: 1px solid red;
+      // align-items: center;
+      .body-welcome-image {
+        max-width: 100%;
+        // max-height: 200%;
+        transition: transform 0.3s ease-in-out;
+      }
+      .body-welcome-image:hover {
+        transform: scale(1.2);
+        // overflow: hidden;
+      }
+    }
+  }
+}
