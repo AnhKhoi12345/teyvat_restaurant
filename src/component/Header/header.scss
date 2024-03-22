@@ -7,12 +7,11 @@
     height: 100%;
     width: 100%;
     border: 1px solid rgb(0, 0, 0, 0);
-    background: url(../../images/restaurant2.jpg) top no-repeat;
-    background-size: 100% 100%;
+    // background-size: 100% 100%;
     // background-color: rgb(0, 0, 0, 0.5);
     .header-flex {
       height: 100%;
-      border: 5px solid blue;
+      // border: 5px solid blue;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -59,6 +58,10 @@
       font-size: 25px;
       user-select: none;
       display: none;
+      cursor: pointer;
+    }
+    .header-slider-btn:hover {
+      background-color: rgb(255, 0, 0, 0.6);
     }
     .header-slider-right {
       right: 5%;
@@ -80,9 +83,9 @@
         // border: 2px solid ;
         border-radius: 50%;
         background-color: lightgrey;
+        cursor: pointer;
       }
       .header-slider-dot:hover {
-        cursor: pointer;
       }
     }
   }
