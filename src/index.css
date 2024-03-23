@@ -19,7 +19,12 @@ body {
   font-weight: normal;
 }
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'ExtraBoldPoppins';
   src: local('Poppins'), url('./fonts/Poppins-ExtraBold.otf') format('opentype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url('./fonts/Poppins-Light.otf') format('opentype');
   font-weight: normal;
 }
