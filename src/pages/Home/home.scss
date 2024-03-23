@@ -150,5 +150,27 @@
       font-family: 'ExtraBoldPoppins';
       color: black;
     }
+    .menu-category-grid {
+      text-decoration: none;
+      .menu-item {
+        position: relative;
+        .menu-name {
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+
+          // vertical-align: middle;
+          // text-align: center;
+          width: 120px;
+          height: 60px;
+          border-radius: 10px;
+          border: 1px solid red;
+        }
+      }
+    }
   }
 }

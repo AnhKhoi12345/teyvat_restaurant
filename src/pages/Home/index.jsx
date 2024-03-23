@@ -3,8 +3,23 @@ import charlotteSpecialty from '../../images/ExclusiveScoopGourmetColumn1.webp';
 import restaurant4 from '../../images/restaurant4.jpg';
 import energizingBento from '../../images/EnergizingBento.webp';
 import sunsetBerryTea from '../../images/SunsetBerryTea.webp';
+import crispyPotatoShrimpPlatter from '../../images/CrispyPotatoShrimpPlatter.webp';
+import riceBun from '../../images/RiceBuns.webp';
+import tricolorDango from '../../images/TricolorDango.webp';
+import yearning from '../../images/ColleiYearning.webp';
+import appleCider from '../../images/AppleCider.webp';
+import seabirdsSojourn from '../../images/FreminetSeabirdsSojourn.webp';
+
 import { Link } from 'react-router-dom';
 function Home() {
+  const menuList = [
+    { id: 1, name: 'Mondstadt', link: '/menu#Mondstadt', size: 'tall', image: crispyPotatoShrimpPlatter },
+    { id: 2, name: 'Liyue', link: '/menu#Liyue', size: 'tall', image: riceBun },
+    { id: 3, name: 'Inazuma', link: '/menu#Inazuma', size: 'default', image: tricolorDango },
+    { id: 4, name: 'Sumeru', link: '/menu#Sumeru', size: 'default', image: yearning },
+    { id: 5, name: 'Fontaine', link: '/menu#Fontaine', size: 'long', image: seabirdsSojourn },
+    { id: 6, name: 'Drink & Dessert', link: '/menu#DrinkDessert', size: 'default', image: appleCider },
+  ];
   return (
     <div className="home-container">
       <section className="body-welcome-container">
@@ -84,6 +99,22 @@ function Home() {
       <section className="body-menu">
         <h3 className="menu-discover">Discover</h3>
         <h2 className="our-menu">OUR MENU</h2>
+        <ul className="menu-category-grid">
+          {menuList.map((item) => {
+            return (
+              <li className="menu-item" key={item.id}>
+                <Link to={item.link} className={item.size}>
+                  {/* <div className='menu'> */}
+                  <img className="menu-image" src={item.image} alt="Menu" />
+                  <div className="menu-name">
+                    <h3>{item.name}</h3>
+                    {/* </div> */}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </div>
   );
