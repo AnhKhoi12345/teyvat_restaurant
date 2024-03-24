@@ -13,12 +13,12 @@ import seabirdsSojourn from '../../images/FreminetSeabirdsSojourn.webp';
 import { Link } from 'react-router-dom';
 function Home() {
   const menuList = [
-    { id: 1, name: 'Mondstadt', link: '/menu#Mondstadt', size: 'tall', image: crispyPotatoShrimpPlatter },
-    { id: 2, name: 'Liyue', link: '/menu#Liyue', size: 'tall', image: riceBun },
-    { id: 3, name: 'Inazuma', link: '/menu#Inazuma', size: 'default', image: tricolorDango },
-    { id: 4, name: 'Sumeru', link: '/menu#Sumeru', size: 'default', image: yearning },
-    { id: 5, name: 'Fontaine', link: '/menu#Fontaine', size: 'long', image: seabirdsSojourn },
-    { id: 6, name: 'Drink & Dessert', link: '/menu#DrinkDessert', size: 'default', image: appleCider },
+    { id: 1, name: 'Mondstadt', link: '/menu#Mondstadt', size: 'mon', image: crispyPotatoShrimpPlatter },
+    { id: 2, name: 'Liyue', link: '/menu#Liyue', size: 'li', image: riceBun },
+    { id: 3, name: 'Inazuma', link: '/menu#Inazuma', size: '', image: tricolorDango },
+    { id: 4, name: 'Sumeru', link: '/menu#Sumeru', size: '', image: yearning },
+    { id: 5, name: 'Fontaine', link: '/menu#Fontaine', size: 'fon', image: seabirdsSojourn },
+    { id: 6, name: 'Drink & Dessert', link: '/menu#DrinkDessert', size: '', image: appleCider },
   ];
   return (
     <div className="home-container">
@@ -102,8 +102,8 @@ function Home() {
         <ul className="menu-category-grid">
           {menuList.map((item) => {
             return (
-              <li className="menu-item" key={item.id}>
-                <Link to={item.link} className={item.size}>
+              <li className={'menu-item ' + item.size} key={item.id}>
+                <Link to={item.link} className="menu-link">
                   {/* <div className='menu'> */}
                   <img className="menu-image" src={item.image} alt="Menu" />
                   <div className="menu-name">

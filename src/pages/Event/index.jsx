@@ -1,7 +1,7 @@
 import './discount.scss';
 
-function Discount() {
+function Event() {
   return <div></div>;
 }
 
-export default Discount;
+export default Event;
