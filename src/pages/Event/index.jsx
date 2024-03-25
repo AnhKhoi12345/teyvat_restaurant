@@ -1,4 +1,4 @@
-import './discount.scss';
+import './event.scss';
 
 function Event() {
   return <div></div>;

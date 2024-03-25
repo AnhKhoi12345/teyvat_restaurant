@@ -1,5 +1,7 @@
 import './home.scss';
+import '/node_modules/primeflex/primeflex.css';
 import charlotteSpecialty from '../../images/ExclusiveScoopGourmetColumn1.webp';
+import restaurant1 from '../../images/restaurant1.jpg';
 import restaurant4 from '../../images/restaurant4.jpg';
 import energizingBento from '../../images/EnergizingBento.webp';
 import sunsetBerryTea from '../../images/SunsetBerryTea.webp';
@@ -9,9 +11,13 @@ import tricolorDango from '../../images/TricolorDango.webp';
 import yearning from '../../images/ColleiYearning.webp';
 import appleCider from '../../images/AppleCider.webp';
 import seabirdsSojourn from '../../images/FreminetSeabirdsSojourn.webp';
-
+import { InputText } from 'primereact/inputtext';
 import { Link } from 'react-router-dom';
+import { Button } from 'primereact/button';
+import { useState } from 'react';
+import InputForm from './components/InputForm';
 function Home() {
+  const [value, setValue] = useState('');
   const menuList = [
     { id: 1, name: 'Mondstadt', link: '/menu#Mondstadt', size: 'mon', image: crispyPotatoShrimpPlatter },
     { id: 2, name: 'Liyue', link: '/menu#Liyue', size: 'li', image: riceBun },
@@ -20,6 +26,9 @@ function Home() {
     { id: 5, name: 'Fontaine', link: '/menu#Fontaine', size: 'fon', image: seabirdsSojourn },
     { id: 6, name: 'Drink & Dessert', link: '/menu#DrinkDessert', size: '', image: appleCider },
   ];
+  const handleFormSubmit = (values) => {
+    console.log('Form Submit: ', values);
+  };
   return (
     <div className="home-container">
       <section className="body-welcome-container">
@@ -51,7 +60,7 @@ function Home() {
           <div className="discover-item">
             <Link to="/about">
               <div className="discover-image-container">
-                <img className="discover-image" src={restaurant4} alt="Restaurant4" />
+                <img className="discover-image" src={restaurant1} alt="Restaurant4" />
               </div>
             </Link>
             <h3 className="discover-title">FANTASTIC RESTAURANT</h3>
@@ -115,6 +124,30 @@ function Home() {
             );
           })}
         </ul>
+        <div className="delivery-parallax">
+          <div className="parallax-overlay">
+            <h2 className="delivery-name">Komaniya Express Delivery</h2>
+            <p className="delivery-p">
+              Based on the famous delivery company from Inazuma, Genshin Impact. Komaniya Express will deliver food to
+              your front door in no time!
+            </p>
+            <Link to="/menu/delivery">
+              <Button className="delivery-btn" label="ORDER NOW" rounded />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="reservation-container">
+        <div className="reservation-form">
+          <div className="reservation-text">
+            <h3 className="reservation">Reservation</h3>
+            <h2 className="book-table">BOOK TABLE</h2>
+          </div>
+          <InputForm onSubmit={handleFormSubmit}></InputForm>
+        </div>
+        <div className="body-welcome-image-container">
+          <img className="body-welcome-image" src={restaurant4} alt="Charlottes Specialty" />
+        </div>
       </section>
     </div>
   );

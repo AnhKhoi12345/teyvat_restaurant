@@ -3,6 +3,7 @@ import Navbar from '../Navbar';
 import './header.scss';
 import { useEffect, useRef, useState } from 'react';
 import useTimeout from '../../customHook';
+import { Link } from 'react-router-dom';
 
 function Header() {
   // const [headerImg, setHeaderImg] = useState(1);
@@ -72,7 +73,9 @@ function Header() {
         <div className="header-flex">
           <h2 className="header-welcome">Welcome to</h2>
           <h1 className="header-title">Teyvat's Restaurant</h1>
-          <Button className="look-menu-btn" label="LOOK MENU" severity="danger" outlined />
+          <Link to="/menu">
+            <Button className="look-menu-btn" label="LOOK MENU" severity="danger" outlined />
+          </Link>
         </div>
         <div
           className="header-slider-left header-slider-btn"
