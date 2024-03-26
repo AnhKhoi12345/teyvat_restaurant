@@ -17,7 +17,6 @@ import { Button } from 'primereact/button';
 import { useState } from 'react';
 import InputForm from './components/InputForm';
 function Home() {
-  const [value, setValue] = useState('');
   const menuList = [
     { id: 1, name: 'Mondstadt', link: '/menu#Mondstadt', size: 'mon', image: crispyPotatoShrimpPlatter },
     { id: 2, name: 'Liyue', link: '/menu#Liyue', size: 'li', image: riceBun },

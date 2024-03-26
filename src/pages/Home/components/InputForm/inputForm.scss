@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  //   border: 1px solid green;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 50px;
+  //   align-items: center;
+  .calendar {
+    width: 100px;
+  }
+  .submit-btn {
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    // padding-left: 10px;
+    background-color: black;
+  }
+}
