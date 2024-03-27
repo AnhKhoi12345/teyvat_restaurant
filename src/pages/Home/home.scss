@@ -283,6 +283,7 @@
     justify-content: center;
     column-gap: 120px;
     background-color: mintcream;
+    padding-bottom: 120px;
     .reservation-form {
       height: auto;
       // text-align: center;
@@ -321,5 +322,198 @@
         // overflow: hidden;
       }
     }
+  }
+  .review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    justify-content: center;
+    column-gap: 120px;
+    text-align: center;
+    .review-title {
+      .customer {
+        font-family: 'Courgette';
+        font-size: 30px;
+        color: #d61c22;
+      }
+      .review {
+        font-family: 'ExtraBoldPoppins';
+        font-size: 50px;
+        color: #222222;
+      }
+      .review-p {
+        color: #666666;
+      }
+    }
+    .carousel-container {
+      width: 100%;
+      padding-top: 60px;
+      padding-left: 40px;
+      padding-right: 40px;
+      .p-carousel-next {
+        width: 60px;
+        height: 60px;
+      }
+      .p-carousel-prev {
+        width: 60px;
+        height: 60px;
+      }
+
+      .carousel-item {
+        .review-avatar-container {
+          .review-avatar {
+            border-width: 5px;
+            border-style: solid;
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+          }
+        }
+        .review-description {
+          margin-top: 10px;
+          .review-text {
+            margin-top: 20px;
+          }
+          .review-star {
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+  .video-container {
+    margin-top: 160px;
+    .video-parallax {
+      width: 100%;
+      height: 100vh;
+      // border: 1px solid black;
+      background: url(../../images/InvigoratingKittyMealYT.png) no-repeat;
+      background-position: left;
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      .video-overlay {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        .video-discover {
+          font-size: 30px;
+          font-family: 'Courgette';
+          color: #d61c22;
+        }
+        .our-video {
+          font-size: 50px;
+          font-family: 'ExtraBoldPoppins';
+          color: black;
+        }
+        .video-button {
+          background-color: rgb(255, 255, 255, 0.8);
+          width: 70px;
+          height: 70px;
+          color: black;
+        }
+        // .fa-play {
+        //   color: black;
+        // }
+        .video-button:hover {
+          background-color: rgb(255, 0, 0, 0.8);
+          color: white;
+        }
+        .video-dialog {
+          .video {
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .news-container {
+    margin-bottom: 130px;
+    margin-top: 150px;
+    text-align: center;
+    .latest-news {
+      font-size: 30px;
+      font-family: 'Courgette';
+      color: #d61c22;
+    }
+    .hoyofood-news {
+      font-size: 50px;
+      font-family: 'ExtraBoldPoppins';
+      color: black;
+    }
+    .news-flex-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 40px;
+      list-style: none;
+      .news-item {
+        // border: 1px solid red;
+        width: 380px;
+        // padding-top: 40px;
+        .news-image-container {
+          // border: 1px solid green;
+          // width: 370px;
+          overflow: hidden;
+          height: 220px;
+          border-radius: 3%;
+          margin-top: 63px;
+          margin-bottom: 30px;
+          .news-image {
+            max-width: 100%;
+            // max-height: 100%;
+            transition: transform 0.3s ease-in-out;
+          }
+          .news-image:hover {
+            transform: scale(1.2);
+          }
+        }
+        .news-title {
+          font-family: 'Poppins';
+          font-size: 22px;
+        }
+        .news-p {
+          margin-top: 15px;
+          font-size: 15px;
+          color: #666666;
+          margin-bottom: 15px;
+        }
+        .news-learn-more {
+          // margin-top: 100px;
+          color: #666666;
+          text-decoration: none;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .sign-up-container {
+    display: flex;
+    flex-direction: column;
+    // padding-top: 50px;
+    height: 350px;
+    width: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    .sign-up-title {
+      font-size: 30px;
+      font-family: 'ExtraBoldPoppins';
+      color: black;
+    }
+    // .sign-up-form {
+    //   border: 1px solid blue;
+    //   width: 50%;
+    // }
   }
 }

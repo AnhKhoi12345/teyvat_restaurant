@@ -5,7 +5,7 @@ import { Calendar } from 'primereact/calendar';
 import './inputField.scss';
 function InputField(props) {
   // const [datetime12h, setDateTime12h] = useState(null);
-  const { control, name, label, disabled, errors, calendar } = props;
+  const { control, name, label, disabled, errors, calendar, placeHolder } = props;
   const getFormErrorMessage = (name) => {
     return errors[name] ? (
       <small className="p-error">{errors[name].message}</small>
@@ -71,7 +71,7 @@ function InputField(props) {
               value={field.value}
               id={field.name}
               disabled={disabled}
-              placeholder={label}
+              placeholder={placeHolder}
               onChange={(e) => field.onChange(e.target.value)}
             />
           )}

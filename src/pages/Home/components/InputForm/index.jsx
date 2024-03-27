@@ -18,6 +18,7 @@ function InputForm(props) {
     email: yup.string().email('Invalid Email').required('Please enter your email'),
     people: yup
       .number()
+      .typeError('Please enter a number of poeple')
       // .matches(phoneRegExp, 'Number is not valid')
       .max(15, 'Max 15 people')
       .min(1, 'Please enter number of people')
@@ -44,12 +45,33 @@ function InputForm(props) {
   };
   return (
     <form className="form" onSubmit={handleSubmit(handleFormSubmit)}>
-      <InputField name="name" label="Name" control={control} errors={errors} calendar={false} />
-      <InputField name="phoneNumber" label="Phone" control={control} errors={errors} calendar={false} />
-      <InputField name="calendar" label="Date" control={control} errors={errors} calendar={true} />
-      <InputField name="email" label="Email" control={control} errors={errors} calendar={false} />
-      <InputField name="people" label="People" control={control} errors={errors} calendar={false} />
-      <InputField name="code" label="Voucher code (optional)" control={control} errors={errors} calendar={false} />
+      <InputField name="name" label="Name" control={control} errors={errors} calendar={false} placeHolder="Name" />
+      <InputField
+        name="phoneNumber"
+        label="Phone"
+        control={control}
+        errors={errors}
+        calendar={false}
+        placeHolder="Phone"
+      />
+      <InputField name="calendar" label="Date" control={control} errors={errors} calendar={true} placeHolder="Date" />
+      <InputField name="email" label="Email" control={control} errors={errors} calendar={false} placeHolder="Email" />
+      <InputField
+        name="people"
+        label="People"
+        control={control}
+        errors={errors}
+        calendar={false}
+        placeHolder="People"
+      />
+      <InputField
+        name="code"
+        label="Voucher code (optional)"
+        control={control}
+        errors={errors}
+        calendar={false}
+        placeHolder="Voucher code"
+      />
       <Button className="submit-btn" type="submit" label="BOOK TABLE"></Button>
     </form>
   );
