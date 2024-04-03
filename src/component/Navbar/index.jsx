@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './navbar.scss';
 import { useRef } from 'react';
 import { Button } from 'primereact/button';
-import { Image } from 'primereact/image';
 
 function Navbar() {
   const navlogo = useRef(null);

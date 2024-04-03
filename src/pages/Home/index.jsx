@@ -15,41 +15,27 @@ import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import InputForm from './components/InputForm';
 import { Carousel } from 'primereact/carousel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import fischlAvatar from '../../images/fischlAvatar.png';
 import thomaAvatar from '../../images/thomaAvatar.png';
 import nahidaAvatar from '../../images/nahidaAvatar.webp';
 import zhongliAvatar from '../../images/zhongliAvatar.png';
 import xingqiuAvatar from '../../images/xingqiuAvatar.webp';
-import discountEvent from '../../images/discountEvent.webp';
-import coffeeCollab from '../../images/coffeCollab.webp';
-import branch from '../../images/branch.jpg';
 import { Dialog } from 'primereact/dialog';
 import SignUpForm from './components/SignUpForm';
+import newsApi from '../../api/newsApi';
+import bookApi from '../../api/bookApi';
 function Home() {
-  const newsList = [
-    {
-      id: 1,
-      title: 'New merchandise dicount event in Teyvat Restaurant',
-      text: 'In 2nd April, we will open an official merch shop at the restaurant, if you have eaten there, you will receive discount for merchs',
-      link: '/news',
-      image: discountEvent,
-    },
-    {
-      id: 2,
-      title: 'New collaboration with coffee Seol shop',
-      text: 'A exciting oversea collab with coffee shop in Seol will be begin on 10th May. Customer will be able to enjoy delicous Teyvat drinks in Korea',
-      link: '/news',
-      image: coffeeCollab,
-    },
-    {
-      id: 3,
-      title: 'A new oversea branch of restaurant may come true!',
-      text: 'HoyoFood are planning to extend our reach to oversea, a new Teyvat Restaurant branch will lkely open in the US',
-      link: '/news',
-      image: branch,
-    },
-  ];
+  const [news, setNews] = useState(null);
+  useEffect(() => {
+    newsApi.getAll().then((data) =>
+      // setFood(data)
+      {
+        let newsList = data.slice(data.length - 3, data.length);
+        setNews(newsList);
+      }
+    );
+  }, []);
   const [youtubeID] = useState('8BLjG4Cof1U');
   const [visible, setVisible] = useState(false);
   const pyro = 'red';
@@ -108,7 +94,7 @@ function Home() {
     { id: 6, name: 'Drink & Dessert', link: '/menu#DrinkDessert', size: '', image: appleCider },
   ];
   const handleFormSubmit = (values) => {
-    console.log('Form Submit: ', values);
+    bookApi.add(values);
   };
   // const [products, setProducts] = useState([]);
   const responsiveOptions = [
@@ -336,24 +322,29 @@ function Home() {
         <h3 className="latest-news">Latest News</h3>
         <h2 className="hoyofood-news">HOYOFOOD NEWS</h2>
         <ul className="news-flex-container">
-          {newsList.map((item) => {
-            return (
-              <li className="news-item">
-                <Link to={item.link}>
-                  <div className="news-image-container">
-                    <img className="news-image" src={item.image} alt={item.title} />
-                  </div>
-                </Link>
-                <h3 className="news-title">{item.title}</h3>
-                <p className="news-p">{item.text}</p>
-                <Link className="news-learn-more" to={item.link}>
-                  <b>
-                    LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                  </b>
-                </Link>
-              </li>
-            );
-          })}
+          {news &&
+            news.map((item) => {
+              return (
+                <li className="news-item" key={item._id}>
+                  <Link to={`/news/${item._id}`}>
+                    <div className="news-image-container">
+                      <img
+                        className="news-image"
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt={item.title}
+                      />
+                    </div>
+                  </Link>
+                  <h3 className="news-title">{item.title}</h3>
+                  <p className="news-p">{item.detail}</p>
+                  <Link className="news-learn-more" to={`/news/${item._id}`}>
+                    <b>
+                      LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                    </b>
+                  </Link>
+                </li>
+              );
+            })}
         </ul>
       </section>
       <section className="sign-up-container">

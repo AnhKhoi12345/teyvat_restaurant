@@ -79,15 +79,6 @@ function Menu() {
       </div>
     </div>
   );
-  // const onRowSelect = (e) => {
-  //   navigate(`/datatables/team/${e.data._id}`);
-  //   console.log(e.data.id);
-  // };
-  const [products, setProducts] = useState([]);
-
-  // useEffect(() => {
-  //   foodApi.getAll().then((data) => setProducts(data));
-  // }, []);
 
   return (
     <div>

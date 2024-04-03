@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InputField from '../../../../component/FormControl/InputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,7 +10,7 @@ function InputForm(props) {
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup.object().shape({
     name: yup.string().required('Please enter your name'),
-    phoneNumber: yup
+    phone: yup
       .string()
       .matches(phoneRegExp, 'Phone number is not valid')
       .test('len', 'Must be 10 or larger', (val) => val.length >= 10),
@@ -32,7 +32,7 @@ function InputForm(props) {
   } = useForm({
     defaultValues: {
       name: '',
-      phoneNumber: '',
+      phone: '',
       calendar: '',
       email: '',
       people: '',
@@ -41,19 +41,31 @@ function InputForm(props) {
     resolver: yupResolver(schema),
   });
   const handleFormSubmit = (values) => {
-    console.log('Input Form:', values);
+    const formData = new URLSearchParams();
+    formData.append('name', values.name);
+    formData.append('phone', values.phone);
+    formData.append('date', values.calendar);
+    formData.append('email', values.email);
+    formData.append('people', values.people);
+    formData.append('code', values.code);
+    console.log('Input Form:', values.name);
+    try {
+      fetch('http://localhost:3001/api/book', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+        });
+    } catch (error) {
+      console.error(error.response.data);
+    }
   };
   return (
     <form className="form" onSubmit={handleSubmit(handleFormSubmit)}>
       <InputField name="name" label="Name" control={control} errors={errors} calendar={false} placeHolder="Name" />
-      <InputField
-        name="phoneNumber"
-        label="Phone"
-        control={control}
-        errors={errors}
-        calendar={false}
-        placeHolder="Phone"
-      />
+      <InputField name="phone" label="Phone" control={control} errors={errors} calendar={false} placeHolder="Phone" />
       <InputField name="calendar" label="Date" control={control} errors={errors} calendar={true} placeHolder="Date" />
       <InputField name="email" label="Email" control={control} errors={errors} calendar={false} placeHolder="Email" />
       <InputField
