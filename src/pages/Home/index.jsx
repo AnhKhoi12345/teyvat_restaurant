@@ -255,7 +255,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="reservation-container">
+      <section className="reservation-container" id="reservation">
         <div className="reservation-form">
           <div className="reservation-text">
             <h3 className="reservation">Reservation</h3>

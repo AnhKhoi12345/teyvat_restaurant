@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import InputField from '../../../../component/FormControl/InputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Button } from 'primereact/button';
 import './inputForm.scss';
+import { Toast } from 'primereact/toast';
 function InputForm(props) {
+  const toast = useRef(null);
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup.object().shape({
@@ -57,35 +59,43 @@ function InputForm(props) {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
+          toast.current.show({
+            severity: 'info',
+            summary: 'Info',
+            detail: 'Reservation request sent successfully!',
+          });
         });
     } catch (error) {
       console.error(error.response.data);
     }
   };
   return (
-    <form className="form" onSubmit={handleSubmit(handleFormSubmit)}>
-      <InputField name="name" label="Name" control={control} errors={errors} calendar={false} placeHolder="Name" />
-      <InputField name="phone" label="Phone" control={control} errors={errors} calendar={false} placeHolder="Phone" />
-      <InputField name="calendar" label="Date" control={control} errors={errors} calendar={true} placeHolder="Date" />
-      <InputField name="email" label="Email" control={control} errors={errors} calendar={false} placeHolder="Email" />
-      <InputField
-        name="people"
-        label="People"
-        control={control}
-        errors={errors}
-        calendar={false}
-        placeHolder="People"
-      />
-      <InputField
-        name="code"
-        label="Voucher code (optional)"
-        control={control}
-        errors={errors}
-        calendar={false}
-        placeHolder="Voucher code"
-      />
-      <Button className="submit-btn" type="submit" label="BOOK TABLE"></Button>
-    </form>
+    <>
+      <Toast ref={toast} />
+      <form className="form" onSubmit={handleSubmit(handleFormSubmit)}>
+        <InputField name="name" label="Name" control={control} errors={errors} calendar={false} placeHolder="Name" />
+        <InputField name="phone" label="Phone" control={control} errors={errors} calendar={false} placeHolder="Phone" />
+        <InputField name="calendar" label="Date" control={control} errors={errors} calendar={true} placeHolder="Date" />
+        <InputField name="email" label="Email" control={control} errors={errors} calendar={false} placeHolder="Email" />
+        <InputField
+          name="people"
+          label="People"
+          control={control}
+          errors={errors}
+          calendar={false}
+          placeHolder="People"
+        />
+        <InputField
+          name="code"
+          label="Voucher code (optional)"
+          control={control}
+          errors={errors}
+          calendar={false}
+          placeHolder="Voucher code"
+        />
+        <Button className="submit-btn" type="submit" label="BOOK TABLE"></Button>
+      </form>
+    </>
   );
 }
 export default InputForm;

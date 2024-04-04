@@ -3,8 +3,6 @@ import './footer.scss';
 import foodApi from '../../api/foodApi';
 import { useEffect, useState, useRef } from 'react';
 import { Galleria } from 'primereact/galleria';
-import { Image } from 'primereact/image';
-import { Avatar } from 'primereact/avatar';
 // import { PhotoService } from './service/PhotoService';
 function Footer() {
   const [food, setFood] = useState(null);
