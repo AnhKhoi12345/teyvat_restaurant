@@ -9,11 +9,13 @@ import Contact from './pages/Contact';
 import Header from './component/Header';
 import Footer from './component/Footer';
 import Event from './pages/Event';
+import Navbar from './component/Navbar';
 function App() {
   return (
     <div className="App" id="body">
       <div className="page">
-        <Header />
+        <Navbar />
+        {/* <Header /> */}
         {/* <Navigate from="/home" to="/" exact={true} /> */}
         <Routes>
           <Route path="/" element={<Home />} exact />

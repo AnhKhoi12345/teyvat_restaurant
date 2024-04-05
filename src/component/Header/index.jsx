@@ -59,7 +59,6 @@ function Header() {
   };
   return (
     <div className="header">
-      <Navbar />
       <div
         className="header-container"
         onMouseEnter={() => {

@@ -20,6 +20,7 @@ function Navbar() {
         setFood(foodList);
       }
     );
+    navbarScroll();
   }, []);
   const [sidebar, setSidebar] = useState(true);
   const overlay = useRef(null);
@@ -45,8 +46,8 @@ function Navbar() {
   const navIconArray = useRef(new Array());
   const navbarScroll = () => {
     let scrollTop = window.pageYOffset;
-    if (scrollTop >= 10) {
-      navbar.current.style.backgroundColor = 'rgb(255, 255, 255,0.8)';
+    if (scrollTop >= 1) {
+      navbar.current.style.backgroundColor = 'rgb(255, 255, 255,0.95)';
       navlogo.current.style.background = 'url("https://i.imgur.com/3aE4bds.png") top no-repeat';
       navlogo.current.style.backgroundSize = 'contain';
       menuBtn.current.style.color = 'black';

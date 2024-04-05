@@ -25,6 +25,7 @@ import { Dialog } from 'primereact/dialog';
 import SignUpForm from './components/SignUpForm';
 import newsApi from '../../api/newsApi';
 import bookApi from '../../api/bookApi';
+import Header from '../../component/Header';
 function Home() {
   const [news, setNews] = useState(null);
   useEffect(() => {
@@ -148,210 +149,213 @@ function Home() {
     );
   };
   return (
-    <div className="home-container">
-      <section className="body-welcome-container">
-        <div className="body-welcome-text">
-          <h3 className="body-restaurant-name">Teyvatian Restaurant</h3>
-          <h2 className="body-welcome">WELCOME</h2>
-          <p className="body-weldome-p">
-            Welcome Travelers to the official restaurant run by Hoyofood, here travelers can enjoy many wonderful
-            Teyvatian dishes from many nations from Genshin Impact
-          </p>
-          <Link className="our-story" to="/menu">
-            <b>
-              OUR STORY <i class="fa-solid fa-arrow-right"></i>
-            </b>
-          </Link>
-        </div>
-        <div className="body-welcome-image-container">
-          <img className="body-welcome-image" src={charlotteSpecialty} alt="Charlottes Specialty" />
-        </div>
-      </section>
-      <section className="body-discover">
-        <div className="discover-parallax">
-          <div className="parallax-overlay">
-            <h3 className="parallax-discover">Discover</h3>
-            <h2 className="parallax-teyvat">Teyvat's Restaurant</h2>
-          </div>
-        </div>
-        <div className="discover-flex-container">
-          <div className="discover-item">
-            <Link to="/about">
-              <div className="discover-image-container">
-                <img className="discover-image" src={restaurant1} alt="Restaurant4" />
-              </div>
-            </Link>
-            <h3 className="discover-title">FANTASTIC RESTAURANT</h3>
-            <p className="discover-p">
-              Find out about our wonderful and lively restaurant, where travelers can enjoy food with friends
+    <>
+      <Header />
+      <div className="home-container">
+        <section className="body-welcome-container">
+          <div className="body-welcome-text">
+            <h3 className="body-restaurant-name">Teyvatian Restaurant</h3>
+            <h2 className="body-welcome">WELCOME</h2>
+            <p className="body-weldome-p">
+              Welcome Travelers to the official restaurant run by Hoyofood, here travelers can enjoy many wonderful
+              Teyvatian dishes from many nations from Genshin Impact
             </p>
-            <Link className="discover-learn-more" to="/about">
+            <Link className="our-story" to="/menu">
               <b>
-                LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                OUR STORY <i class="fa-solid fa-arrow-right"></i>
               </b>
             </Link>
           </div>
-          <div className="discover-item">
-            <Link to="/menu">
-              <div className="discover-image-container">
-                <img className="discover-image" src={energizingBento} alt="Bento" />
-              </div>
-            </Link>
-            <h3 className="discover-title">DELICIOUS FOOD</h3>
-            <p className="discover-p">
-              Many beloved food from Monstadt to Fontaine have been recreated by professional chefs
-            </p>
-            <Link className="discover-learn-more" to="/menu">
-              <b>
-                LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-              </b>
-            </Link>
+          <div className="body-welcome-image-container">
+            <img className="body-welcome-image" src={charlotteSpecialty} alt="Charlottes Specialty" />
           </div>
-          <div className="discover-item">
-            <Link to="/menu">
-              <div className="discover-image-container">
-                <img className="discover-image" src={sunsetBerryTea} alt="Berry tea" />
-              </div>
-            </Link>
-            <h3 className="discover-title">GREAT DRINK</h3>
-            <p className="discover-p">Not only food, you can also enjoy refresh drinks from Teyvat</p>
-            <Link className="discover-learn-more" to="/menu">
-              <b>
-                LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-              </b>
-            </Link>
+        </section>
+        <section className="body-discover">
+          <div className="discover-parallax">
+            <div className="parallax-overlay">
+              <h3 className="parallax-discover">Discover</h3>
+              <h2 className="parallax-teyvat">Teyvat's Restaurant</h2>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="body-menu">
-        <h3 className="menu-discover">Discover</h3>
-        <h2 className="our-menu">OUR MENU</h2>
-        <ul className="menu-category-grid">
-          {menuList.map((item) => {
-            return (
-              <li className={'menu-item ' + item.size} key={item.id}>
-                <Link to={item.link} className="menu-link">
-                  {/* <div className='menu'> */}
-                  <img className="menu-image" src={item.image} alt="Menu" />
-                  <div className="menu-name">
-                    <h3>{item.name}</h3>
-                    {/* </div> */}
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="delivery-parallax">
-          <div className="parallax-overlay">
-            <h2 className="delivery-name">Komaniya Express Delivery</h2>
-            <p className="delivery-p">
-              Based on the famous delivery company from Inazuma, Genshin Impact. Komaniya Express will deliver food to
-              your front door in no time!
-            </p>
-            <Link to="/menu/delivery">
-              <Button className="delivery-btn" label="ORDER NOW" rounded />
-            </Link>
+          <div className="discover-flex-container">
+            <div className="discover-item">
+              <Link to="/about">
+                <div className="discover-image-container">
+                  <img className="discover-image" src={restaurant1} alt="Restaurant4" />
+                </div>
+              </Link>
+              <h3 className="discover-title">FANTASTIC RESTAURANT</h3>
+              <p className="discover-p">
+                Find out about our wonderful and lively restaurant, where travelers can enjoy food with friends
+              </p>
+              <Link className="discover-learn-more" to="/about">
+                <b>
+                  LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                </b>
+              </Link>
+            </div>
+            <div className="discover-item">
+              <Link to="/menu">
+                <div className="discover-image-container">
+                  <img className="discover-image" src={energizingBento} alt="Bento" />
+                </div>
+              </Link>
+              <h3 className="discover-title">DELICIOUS FOOD</h3>
+              <p className="discover-p">
+                Many beloved food from Monstadt to Fontaine have been recreated by professional chefs
+              </p>
+              <Link className="discover-learn-more" to="/menu">
+                <b>
+                  LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                </b>
+              </Link>
+            </div>
+            <div className="discover-item">
+              <Link to="/menu">
+                <div className="discover-image-container">
+                  <img className="discover-image" src={sunsetBerryTea} alt="Berry tea" />
+                </div>
+              </Link>
+              <h3 className="discover-title">GREAT DRINK</h3>
+              <p className="discover-p">Not only food, you can also enjoy refresh drinks from Teyvat</p>
+              <Link className="discover-learn-more" to="/menu">
+                <b>
+                  LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                </b>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="reservation-container" id="reservation">
-        <div className="reservation-form">
-          <div className="reservation-text">
-            <h3 className="reservation">Reservation</h3>
-            <h2 className="book-table">BOOK TABLE</h2>
-          </div>
-          <InputForm onSubmit={handleFormSubmit}></InputForm>
-        </div>
-        <div className="body-welcome-image-container">
-          <img className="body-welcome-image" src={restaurant4} alt="Charlottes Specialty" />
-        </div>
-      </section>
-      <section className="review-container">
-        <div className="review-title">
-          <h3 className="customer">Customer Say</h3>
-          <h2 className="review">Review</h2>
-          <p className="review-p">Here we show a number of random selected reviews leave in our restaurant</p>
-        </div>
-        <div className="carousel-container">
-          <Carousel
-            value={reviewList}
-            numVisible={1}
-            numScroll={1}
-            responsiveOptions={responsiveOptions}
-            // className="custom-carousel"
-            circular
-            autoplayInterval={10000}
-            itemTemplate={productTemplate}
-          />
-        </div>
-      </section>
-      <section className="video-container">
-        <div className="video-parallax">
-          <div className="video-overlay">
-            <h3 className="video-discover">Discover</h3>
-            <h2 className="our-video">OUR VIDEO</h2>
-            {/* <div className="card flex justify-content-center"> */}
-            <Button
-              className="video-button"
-              rounded
-              // size="large"
-              icon="fa-solid fa-play"
-              onClick={() => setVisible(true)}
-            />
-            <Dialog
-              // header="Header"
-              visible={visible}
-              style={{ width: '100vw', height: '100vh' }}
-              onHide={() => setVisible(false)}
-              className="video-dialog"
-            >
-              <iframe
-                className="video"
-                title="Youtube player"
-                sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
-                src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}
-                style={{ border: '0', width: '100%', height: '100%' }}
-              ></iframe>
-            </Dialog>
-            {/* </div> */}
-          </div>
-        </div>
-      </section>
-      <section className="news-container">
-        <h3 className="latest-news">Latest News</h3>
-        <h2 className="hoyofood-news">HOYOFOOD NEWS</h2>
-        <ul className="news-flex-container">
-          {news &&
-            news.map((item) => {
+        </section>
+        <section className="body-menu">
+          <h3 className="menu-discover">Discover</h3>
+          <h2 className="our-menu">OUR MENU</h2>
+          <ul className="menu-category-grid">
+            {menuList.map((item) => {
               return (
-                <li className="news-item" key={item._id}>
-                  <Link to={`/news/${item._id}`}>
-                    <div className="news-image-container">
-                      <img
-                        className="news-image"
-                        src={`http://localhost:3001/uploads/${item.image}`}
-                        alt={item.title}
-                      />
+                <li className={'menu-item ' + item.size} key={item.id}>
+                  <Link to={item.link} className="menu-link">
+                    {/* <div className='menu'> */}
+                    <img className="menu-image" src={item.image} alt="Menu" />
+                    <div className="menu-name">
+                      <h3>{item.name}</h3>
+                      {/* </div> */}
                     </div>
-                  </Link>
-                  <h3 className="news-title">{item.title}</h3>
-                  <p className="news-p">{item.detail}</p>
-                  <Link className="news-learn-more" to={`/news/${item._id}`}>
-                    <b>
-                      LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </b>
                   </Link>
                 </li>
               );
             })}
-        </ul>
-      </section>
-      <section className="sign-up-container">
-        <h3 className="sign-up-title">Want to work at Teyvat's Restaurant?</h3>
-        <SignUpForm className="sign-up-form" onSubmit={handleFormSubmit}></SignUpForm>
-      </section>
-    </div>
+          </ul>
+          <div className="delivery-parallax">
+            <div className="parallax-overlay">
+              <h2 className="delivery-name">Komaniya Express Delivery</h2>
+              <p className="delivery-p">
+                Based on the famous delivery company from Inazuma, Genshin Impact. Komaniya Express will deliver food to
+                your front door in no time!
+              </p>
+              <Link to="/menu/delivery">
+                <Button className="delivery-btn" label="ORDER NOW" rounded />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="reservation-container" id="reservation">
+          <div className="reservation-form">
+            <div className="reservation-text">
+              <h3 className="reservation">Reservation</h3>
+              <h2 className="book-table">BOOK TABLE</h2>
+            </div>
+            <InputForm onSubmit={handleFormSubmit}></InputForm>
+          </div>
+          <div className="body-welcome-image-container">
+            <img className="body-welcome-image" src={restaurant4} alt="Charlottes Specialty" />
+          </div>
+        </section>
+        <section className="review-container">
+          <div className="review-title">
+            <h3 className="customer">Customer Say</h3>
+            <h2 className="review">Review</h2>
+            <p className="review-p">Here we show a number of random selected reviews leave in our restaurant</p>
+          </div>
+          <div className="carousel-container">
+            <Carousel
+              value={reviewList}
+              numVisible={1}
+              numScroll={1}
+              responsiveOptions={responsiveOptions}
+              // className="custom-carousel"
+              circular
+              autoplayInterval={10000}
+              itemTemplate={productTemplate}
+            />
+          </div>
+        </section>
+        <section className="video-container">
+          <div className="video-parallax">
+            <div className="video-overlay">
+              <h3 className="video-discover">Discover</h3>
+              <h2 className="our-video">OUR VIDEO</h2>
+              {/* <div className="card flex justify-content-center"> */}
+              <Button
+                className="video-button"
+                rounded
+                // size="large"
+                icon="fa-solid fa-play"
+                onClick={() => setVisible(true)}
+              />
+              <Dialog
+                // header="Header"
+                visible={visible}
+                style={{ width: '100vw', height: '100vh' }}
+                onHide={() => setVisible(false)}
+                className="video-dialog"
+              >
+                <iframe
+                  className="video"
+                  title="Youtube player"
+                  sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
+                  src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}
+                  style={{ border: '0', width: '100%', height: '100%' }}
+                ></iframe>
+              </Dialog>
+              {/* </div> */}
+            </div>
+          </div>
+        </section>
+        <section className="news-container">
+          <h3 className="latest-news">Latest News</h3>
+          <h2 className="hoyofood-news">HOYOFOOD NEWS</h2>
+          <ul className="news-flex-container">
+            {news &&
+              news.map((item) => {
+                return (
+                  <li className="news-item" key={item._id}>
+                    <Link to={`/news/${item._id}`}>
+                      <div className="news-image-container">
+                        <img
+                          className="news-image"
+                          src={`http://localhost:3001/uploads/${item.image}`}
+                          alt={item.title}
+                        />
+                      </div>
+                    </Link>
+                    <h3 className="news-title">{item.title}</h3>
+                    <p className="news-p">{item.detail}</p>
+                    <Link className="news-learn-more" to={`/news/${item._id}`}>
+                      <b>
+                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
+                      </b>
+                    </Link>
+                  </li>
+                );
+              })}
+          </ul>
+        </section>
+        <section className="sign-up-container">
+          <h3 className="sign-up-title">Want to work at Teyvat's Restaurant?</h3>
+          <SignUpForm className="sign-up-form" onSubmit={handleFormSubmit}></SignUpForm>
+        </section>
+      </div>
+    </>
   );
 }
 
