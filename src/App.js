@@ -10,6 +10,7 @@ import Header from './component/Header';
 import Footer from './component/Footer';
 import Event from './pages/Event';
 import Navbar from './component/Navbar';
+import MenuItem from './pages/MenuItem';
 function App() {
   return (
     <div className="App" id="body">
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} exact />
           <Route path="/home" element={<Home />} exact />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/menu/:id" element={<MenuItem />} />
           <Route path="/about" element={<About />} exact />
           <Route path="/event" element={<Event />} exact />
           <Route path="/news" element={<News />} exact />

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import foodApi from '../../api/foodApi';
 import PropHeader from '../../component/PropHeader';
+import { Link } from 'react-router-dom';
 function Menu() {
   // // const navigate = useNavigate();
   // const [globalFilterValue, setGlobalFilterValue] = useState('');
@@ -123,6 +124,7 @@ function Menu() {
   const [sumeruFood, setSumeruFood] = useState(null);
   const [fontaineFood, setFontaineFood] = useState(null);
   const [sideFood, setSideFood] = useState(null);
+  const [latest, setLatest] = useState(null);
   useEffect(() => {
     foodApi.getAll().then((data) =>
       //setFood(data)
@@ -139,13 +141,38 @@ function Menu() {
         setFontaineFood(fontaine);
         const side = data.filter((data) => data.category === 'Side');
         setSideFood(side);
+        const latest = data.slice(data.length - 1, data.length);
+        setLatest(latest);
       }
     );
   }, []);
   return (
     <>
       <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="TEYVAT MENU" />
-      <section className="latest-food"></section>
+      {latest &&
+        latest.map((item) => {
+          return (
+            <section className="latest-food">
+              <div className="latest-text">
+                <p>Our latest addition to the menu</p>
+                <h1>{item.name}</h1>
+                <Link to={`/menu/${item._id}`}>
+                  <Button className="latest-button" label="More Detail"></Button>
+                </Link>
+              </div>
+              <div className="latest-image-container">
+                <img
+                  className="latest-image"
+                  src={`http://localhost:3001/uploads/${item.image}`}
+                  alt=""
+                  style={{ cursor: 'pointer' }}
+                  // onClick={() => {
+                  // }}
+                />
+              </div>
+            </section>
+          );
+        })}
       <section className="mondstadt-food">
         <div className="parallax">
           <div className="parallax-overlay">
@@ -158,15 +185,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
@@ -191,15 +222,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
@@ -224,15 +259,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
@@ -257,15 +296,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
@@ -290,15 +333,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
@@ -323,15 +370,19 @@ function Menu() {
               let imgEl = (
                 <>
                   <div className="item-image-container">
-                    <img
-                      src={`http://localhost:3001/uploads/${item.image}`}
-                      alt=""
-                      style={{ cursor: 'pointer' }}
-                      // onClick={() => {
-                      // }}
-                    />
+                    <Link to={`/menu/${item._id}`}>
+                      <img
+                        src={`http://localhost:3001/uploads/${item.image}`}
+                        alt=""
+                        style={{ cursor: 'pointer' }}
+                        // onClick={() => {
+                        // }}
+                      />
+                    </Link>
                   </div>
-                  <h3>{item.name}</h3>
+                  <Link className="item-name" to={`/menu/${item._id}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p className="item-des">{item.description}</p>
                   <p className="item-price">${item.price}</p>
                 </>
