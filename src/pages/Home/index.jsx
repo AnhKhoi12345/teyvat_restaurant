@@ -29,6 +29,7 @@ import Header from '../../component/Header';
 function Home() {
   const [news, setNews] = useState(null);
   useEffect(() => {
+    window.scrollTo(0, 0);
     newsApi.getAll().then((data) =>
       // setFood(data)
       {
@@ -351,7 +352,7 @@ function Home() {
           </ul>
         </section>
         <section className="sign-up-container">
-          <h3 className="sign-up-title">Want to work at Teyvat's Restaurant?</h3>
+          <h3 className="sign-up-title">Want to contact us?</h3>
           <SignUpForm className="sign-up-form" onSubmit={handleFormSubmit}></SignUpForm>
         </section>
       </div>

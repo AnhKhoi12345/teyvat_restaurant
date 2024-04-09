@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import foodApi from '../../api/foodApi';
 import PropHeader from '../../component/PropHeader';
 import { Link } from 'react-router-dom';
+import SignUpForm from '../Home/components/SignUpForm';
 function Menu() {
   // // const navigate = useNavigate();
   // const [globalFilterValue, setGlobalFilterValue] = useState('');
@@ -126,6 +127,7 @@ function Menu() {
   const [sideFood, setSideFood] = useState(null);
   const [latest, setLatest] = useState(null);
   useEffect(() => {
+    window.scrollTo(0, 0);
     foodApi.getAll().then((data) =>
       //setFood(data)
       {
@@ -146,6 +148,9 @@ function Menu() {
       }
     );
   }, []);
+  const handleFormSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <>
       <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="TEYVAT MENU" />
@@ -394,6 +399,10 @@ function Menu() {
               );
             })}
         </div>
+      </section>
+      <section className="sign-up-container">
+        <h3 className="sign-up-title">Want to contact us?</h3>
+        <SignUpForm className="sign-up-form" onSubmit={handleFormSubmit}></SignUpForm>
       </section>
     </>
   );

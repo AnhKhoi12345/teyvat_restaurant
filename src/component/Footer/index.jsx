@@ -3,6 +3,7 @@ import './footer.scss';
 import foodApi from '../../api/foodApi';
 import { useEffect, useState, useRef } from 'react';
 import { Galleria } from 'primereact/galleria';
+import { HashLink } from 'react-router-hash-link';
 // import { PhotoService } from './service/PhotoService';
 function Footer() {
   const [food, setFood] = useState(null);
@@ -86,9 +87,9 @@ function Footer() {
           <div className="footer-time">
             <h3>About Us: HoyoFood</h3>
             <p>
-              <Link className="hoyofood-about-link" to="/about#history">
+              <HashLink className="hoyofood-about-link" to="/about#history">
                 History of HoyoFood
-              </Link>
+              </HashLink>
             </p>
             <p>
               <Link className="hoyofood-about-link" to="/about">

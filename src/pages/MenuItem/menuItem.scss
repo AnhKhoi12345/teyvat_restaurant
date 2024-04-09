@@ -54,3 +54,23 @@
     }
   }
 }
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  // padding-top: 50px;
+  height: 350px;
+  width: 100%;
+  background-color: lightgrey;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  .sign-up-title {
+    font-size: 30px;
+    font-family: 'ExtraBoldPoppins';
+    color: black;
+  }
+  // .sign-up-form {
+  //   border: 1px solid blue;
+  //   width: 50%;
+  // }
+}

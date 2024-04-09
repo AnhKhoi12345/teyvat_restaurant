@@ -14,10 +14,14 @@ function MenuItem() {
   useEffect(() => {
     let id = window.location.href.split('/').reverse()[0];
     foodApi.get(id).then((data) => setFood(data));
+    // window.onbeforeunload = function () {
+    //   window.scrollTo(0, 0);
+    // };
+    window.scrollTo(0, 0);
   }, []);
   return (
     <>
-      <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="TEYVAT FOOD" />
+      {/* <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="TEYVAT FOOD" /> */}
       <section className="food-info-container">
         <div className="food-image-container">
           <img
