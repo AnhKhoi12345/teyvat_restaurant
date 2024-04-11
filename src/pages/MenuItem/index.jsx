@@ -21,7 +21,7 @@ function MenuItem() {
   }, []);
   return (
     <>
-      {/* <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="TEYVAT FOOD" /> */}
+      <PropHeader img="url(https://i.imgur.com/vUOwjbV.png)  top no-repeat" title="MENU >> DETAILS" />
       <section className="food-info-container">
         <div className="food-image-container">
           <img

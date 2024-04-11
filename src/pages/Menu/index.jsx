@@ -400,6 +400,18 @@ function Menu() {
             })}
         </div>
       </section>
+      <section className="delivery-parallax">
+        <div className="parallax-overlay">
+          <h2 className="delivery-name">Komaniya Express Delivery</h2>
+          <p className="delivery-p">
+            Based on the famous delivery company from Inazuma, Genshin Impact. Komaniya Express will deliver food to
+            your front door in no time!
+          </p>
+          <Link to="/menu/delivery">
+            <Button className="delivery-btn" label="ORDER NOW" rounded />
+          </Link>
+        </div>
+      </section>
       <section className="sign-up-container">
         <h3 className="sign-up-title">Want to contact us?</h3>
         <SignUpForm className="sign-up-form" onSubmit={handleFormSubmit}></SignUpForm>

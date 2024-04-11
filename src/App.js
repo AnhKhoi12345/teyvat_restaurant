@@ -11,6 +11,7 @@ import Footer from './component/Footer';
 import Event from './pages/Event';
 import Navbar from './component/Navbar';
 import MenuItem from './pages/MenuItem';
+import MenuDelivery from './pages/MenuDelivery';
 function App() {
   return (
     <div className="App" id="body">
@@ -21,8 +22,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/home" element={<Home />} exact />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/menu/:id" element={<MenuItem />} />
+          <Route path="/menu" element={<Menu />} exact />
+          <Route path="/menu/:id" element={<MenuItem />} exact />
+          <Route path="/menu/delivery" element={<MenuDelivery />} exact />
           <Route path="/about" element={<About />} exact />
           <Route path="/event" element={<Event />} exact />
           <Route path="/news" element={<News />} exact />

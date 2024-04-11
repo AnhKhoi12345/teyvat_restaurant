@@ -1,0 +1,55 @@
+.delivery-page-container {
+  padding-top: 100px;
+  padding-right: 30px;
+  //   margin-top: 100px;
+  //   color: rgb(185, 143, 143);
+  height: 150vh;
+  border: 1px solid blue;
+  background-color: aliceblue;
+  //   padding-top: ;
+  .delivery-container {
+    float: left;
+    height: 100vh;
+    background-color: aliceblue;
+    width: 550px;
+    // border: 1px solid orange;
+  }
+  .food-container {
+    background-color: aliceblue;
+    float: right;
+    .food-grid {
+      height: 80vh;
+      overflow: scroll;
+      height: 100vh;
+      //   border: 1px solid red;
+      width: 900px;
+      display: grid;
+      grid-template-columns: 280px 280px 280px;
+      gap: 30px 30px;
+      list-style: none;
+
+      .food-item {
+        background-color: white;
+        height: 380px;
+        // border: 1px solid yellow;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        .food-image-container {
+          border: 1px solid green;
+          overflow: hidden;
+          border-radius: 20px;
+          width: 200px;
+          // height: 70;
+          .food-image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
